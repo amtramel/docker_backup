@@ -1,0 +1,23 @@
+services:
+  unbound:
+    container_name: unbound
+    image: "mvance/unbound:latest"
+    expose:
+      - "53"
+    networks:
+      exposed-macvlan:
+        ipv4_address: 192.168.20.61
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - type: bind
+        read_only: true
+        source: /data/unbound/unbound.conf
+        target: /opt/unbound/etc/unbound/unbound.conf
+    # volumes:
+    #   - "/data/compose/unbound/my_conf/:/opt/unbound/etc/unbound/"
+    restart: unless-stopped
+networks:
+  exposed-macvlan:
+    external: true

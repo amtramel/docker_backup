@@ -12,4 +12,12 @@ This can be adjusted in unbound.conf on line 18 'cache-min-ttl: 2400'
 
 The provided blocklists are not de-duplicated and result in a large block list comprised of over 1M entries
 
-The exclusions have been found to resolve the most common issues encountered, but have not been tested for an extended period of time
+The exclusions have been found to resolve issues encountered thus far, but have not been tested for an extended period of time\
+This list will be updated as issues are encountered and changes are successfully implemented
+
+Issues addressed thus far include:
+- TikTok booting user from app after an indeterminate period of time
+- Microsoft blocking downloads due to "obfuscation of identity"
+- Broken playback of Google TV channels on Shield Pro devices
+- Issues with Facebook application loading images and other foundational functionality
+- Issues with internally hosted Plex that required whitelisting of analytics.plex.tv

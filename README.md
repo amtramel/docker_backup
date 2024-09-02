@@ -6,11 +6,11 @@ IP addresses, macvlan configuration, timezone, and file/path bindings will requi
 # Note on TTL
 
 min-ttl settings in the provided unbound.conf are somewhat liberal and may not be suitable for all scenarios (40 mins in the provided .conf file)\
-This can be adjusted in unbound.conf on line 18 'cache-min-ttl: 2400'
+This can be adjusted in unbound.conf on line 18 'cache-min-ttl: 2400' (seconds 2400/60=40)
 
 # Blocklists and Exclusions
 
-The provided blocklists are not de-duplicated and result in a large block list comprised of over 1M entries
+The provided blocklists are not de-duplicated but result in a large blocklist comprised of over 1M unique entries
 
 The exclusions have been found to resolve issues encountered thus far, but have not been tested for an extended period of time\
 This list will be updated as issues are encountered and changes are successfully implemented

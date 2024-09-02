@@ -1,3 +1,4 @@
+---
 services:
   pihole:
     container_name: pihole-attached
@@ -26,3 +27,4 @@ services:
 networks:
   exposed-macvlan:
     external: true
+...

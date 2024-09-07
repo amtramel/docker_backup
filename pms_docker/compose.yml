@@ -20,7 +20,7 @@ services:
       - PGID=1001
       - TZ='America/New York'
       - VERSION=docker
-      - PLEX_CLAIM=claim-NiqndA1yn82aBJzmpbjQ
+      - PLEX_CLAIM=
     volumes:
       - /appdata/plex_config:/config
       - /appdata/plex/anime:/tv

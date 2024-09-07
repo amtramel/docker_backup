@@ -1,5 +1,5 @@
 # Plex documentation
-## Many assumptions are made here
+## A lot of useful information can be found here: https://hub.docker.com/r/plexinc/pms-docker/
 - We're assuming you've already created a plex user and plex group in Linux. \
 The UID (1001) and GID (1001) will be needed for docker compose and you'll need to check /etc/passwd to make sure they match.
 

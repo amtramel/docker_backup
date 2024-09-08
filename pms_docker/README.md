@@ -61,5 +61,5 @@ In the provided example, we're using a macvlan docker network, and exposing the 
 the same subnet of playback devices. This is a personal preference and many prefer to use the host network by default. \
 Your address space will almost certainly be different, so you'd have to create something that works in your environment. \
 In the example, we're working with a network of 192.168.20.0/26, but DHCP is only managing x.x.x.2-x.x.x.50, leaving twelve \
-addresses within the scope that can be assigned to other resources without colliding with DHCP. \
+addresses within the scope that can be assigned to other resources without colliding with DHCP or the broadcast address. \
 **NOTE: If you are new to docker networking, there's a great tutorial here: https&#65279;://www.youtube.com/watch?v=5grbXvV_DSk**  

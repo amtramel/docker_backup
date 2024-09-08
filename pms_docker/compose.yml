@@ -27,6 +27,8 @@ services:
       - /appdata/plex/movies:/movies
       - /appdata/plex/music:/music
     devices:
+      # This is to map onboard Intel UHD graphics (quick sync) to the container
+      # Your requirements will be different if using a GPU for transcoding
       - /dev/dri:/dev/dri
     restart: unless-stopped
 networks:

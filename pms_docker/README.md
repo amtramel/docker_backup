@@ -13,8 +13,8 @@ You may need to add a repo to install docker and its components.
 sudo dnf config-manager --add-repo https&#65279;://download.docker.com/linux/fedora/docker-ce.repo
 
 dnf repolist  
-<pre>repo name                                                repo id</pre>
-<pre>docker-ce-stable                                         Docker CE Stable - x86_64</pre>
+<pre>repo name                                                repo id
+docker-ce-stable                                         Docker CE Stable - x86_64</pre>
 
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin.
 

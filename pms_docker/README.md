@@ -33,7 +33,7 @@ dnf install nfs-utils
 /appdata/plex is only used as a mount point, and the NFS permissions are configured to read-only on the NAS side.
 
 This has been tested with rm -rf and access is denied due to read-only for the mounted filesystem. \
-Probably best to come back and adjust these permissions later as they're **overly permissive**.
+Probably best to come back and adjust these permissions later as they're possibly over permissive.
 
 sudo chgrp plex /appdata/ \
 sudo chgrp plex /appdata/plex \

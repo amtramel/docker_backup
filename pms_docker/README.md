@@ -27,7 +27,7 @@ sudo usermod -aG docker username
 
 dnf install nfs-utils
 
-- We're assuming you already have folders created and permissions assigned to allow Plex access.
+- **We're assuming you already have folders created and permissions assigned to allow Plex access.**
 
 **NOTE: rwx is ONLY needed for /appdata/plex_config, not for /appdata/plex and may pose a security risk.** \
 /appdata/plex is only used as a mount point, and the NFS permissions are configured to read-only on the NAS side.

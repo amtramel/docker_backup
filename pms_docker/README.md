@@ -4,7 +4,7 @@
 The UID (1001) and GID (1001) will be needed for docker compose and you'll need to check /etc/passwd to make sure they match.
 
 sudo useradd -M plex \
-Example from /etc/passwd: \
+cat /etc/passwd: \
 plex:x:1001:1001:plex::/bin/bash
 
 - **We're assuming you already have docker installed. This is distro dependent so you'll need to look it up for your specific install.** \
@@ -28,7 +28,7 @@ sudo usermod -aG docker username
 
 - **We're assuming you have the NFS packages installed. You may need to install these depending on distribution.**
 
-dnf install nfs-utils
+sudo dnf install nfs-utils
 
 - **We're assuming you already have folders created and permissions assigned to allow Plex access.**
 

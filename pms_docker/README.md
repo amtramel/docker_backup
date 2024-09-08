@@ -4,7 +4,7 @@
 The UID (1001) and GID (1001) will be needed for docker compose and you'll need to check /etc/passwd to make sure they match.
 
 sudo useradd -M plex \
-cat /etc/passwd: \
+cat /etc/passwd: | grep plex \
 plex:x:1001:1001:plex::/bin/bash
 
 - **We're assuming you already have docker installed. This is distro dependent so you'll need to look it up for your specific install.** \
@@ -24,7 +24,7 @@ ex. sudo systemctl enable docker, sudo systemctl start docker, sudo systemctl is
 A note about Docker permissions. By default, Docker commands require sudo permissions. \
 **If you want to run docker commands from a different user context, that user needs to be added to the docker group.**
 
-sudo usermod -aG docker username
+sudo usermod -aG docker your-non-root-username
 
 - **We're assuming you have the NFS packages installed. You may need to install these depending on distribution.**
 

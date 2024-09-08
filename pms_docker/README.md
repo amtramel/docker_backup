@@ -13,7 +13,7 @@ You may need to add a repo to install docker and its components.
 sudo dnf config-manager --add-repo https&#65279;://download.docker.com/linux/fedora/docker-ce.repo
 
 dnf repolist \
-repo id                                                       repo name \
+repo name                                                     repo id \
 docker-ce-stable                                              Docker CE Stable - x86_64
 
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin.
@@ -62,4 +62,4 @@ the same subnet of playback devices. This is a personal preference and many pref
 Your address space will almost certainly be different, so you'd have to create something that works in your environment. \
 In the example, we're working with a network of 192.168.20.0/26, but DHCP is only managing x.x.x.2-x.x.x.50, leaving twelve \
 addresses within the scope that can be assigned to other resources without colliding with DHCP. \
-**NOTE: If you are new to docker networking, there's a great tutorial here: https&#65279;://www.youtube.com/watch?v=5grbXvV_DSk
+**NOTE: If you are new to docker networking, there's a great tutorial here: https&#65279;://www.youtube.com/watch?v=5grbXvV_DSk**  

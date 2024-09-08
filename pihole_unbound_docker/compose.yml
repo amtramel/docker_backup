@@ -1,0 +1,6 @@
+---
+# Begin work here to collapse pihole and unbound into a single compose file.
+# This will require docker network changes as we migrate all our docker containers to a new Linux host.
+# The desired end-state will have pihole and unbound defined as a single stack vs. the separation we have today.
+# Once tested and known working, the pihole/unbound stack will be merged with the main branch. Look for updates in the coming weeks.
+...

@@ -45,7 +45,7 @@ sudo chmod g+rwx /appdata/ \
 sudo chmod g+rwx /appdata/plex/ \
 sudo chmod g+rwx /appdata/plex_config
 
-### NFS mounts will need to be created in /etc/fstab (replace IP and mount path with what is applicable for your environment)
+### NFS mounts will need to be created in /etc/fstab (replace IP, source volume, and mount path with what's applicable for your environment)
 
 x.x.x.x:/volumexx/plex /appdata/plex nfs auto,user 0 0 \
 It's probably best to start with noauto first to make sure there's not a problem with mounting the filesystem. \
@@ -54,3 +54,12 @@ It's probably best to start with noauto first to make sure there's not a problem
 You can test the mount after creating the noauto entry in fstab using the mount command. \
 mount x.x.x.x:/volumexx/plex /appdata/plex/ \
 The /appdata/plex path must already exist with appropriate permissions configured for plex
+
+- **We're assuming at least a foundational understanding of docker networking in the example compose.yml**
+
+In the provided example, we're using a macvlan docker network, and exposing the container on it's own IP within \
+the same subnet of playback devices. This is a personal preference and many prefer to use the host network by default. \
+Your address space will almost certainly be different, so you'd have to create something that works in your environment. \
+In the example, we're working with a network of 192.168.20.0/26, but DHCP is only managing x.x.x.2-x.x.x.50, leaving twelve \
+addresses within the scope that can be assigned to other resources without colliding with DHCP. \
+**NOTE: If you are new to docker networking, there's a great tutorial here: https&#65279;://www.youtube.com/watch?v=5grbXvV_DSk

@@ -18,7 +18,7 @@ docker-ce-stable                                              Docker CE Stable -
 
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin.
 
-**Afer installing docker, you'll want to make sure it's enabled and started**
+**Afer installing docker, you'll want to make sure it's enabled and started** \
 ex. sudo systemctl enable docker, sudo systemctl start docker, sudo systemctl is-enabled docker, sudo systemctl is-active docker
 
 A note about Docker permissions. By default, Docker commands require sudo permissions. \

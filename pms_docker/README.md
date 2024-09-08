@@ -1,5 +1,5 @@
 # Plex documentation
-## A lot of useful information can be found here: https://hub.docker.com/r/plexinc/pms-docker/
+## A lot of useful information can be found here: https&#65279;://hub.docker.com/r/plexinc/pms-docker/
 - **We're assuming you've already created a plex user and plex group in Linux.** \
 The UID (1001) and GID (1001) will be needed for docker compose and you'll need to check /etc/passwd to make sure they match.
 
@@ -10,7 +10,7 @@ plex:x:1001:1001:plex::/bin/bash
 - **We're assuming you already have docker installed. This is distro dependent so you'll need to look it up for your specific install.** \
 You may need to add a repo to install docker and its components.
 
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf config-manager --add-repo https&#65279;://download.docker.com/linux/fedora/docker-ce.repo
 
 dnf repolist \
 repo id                                                       repo name \

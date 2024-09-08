@@ -1,7 +1,6 @@
 # Plex documentation  
 ## A lot of useful information can be found here: https&#65279;://hub.docker.com/r/plexinc/pms-docker/  
 - **We're assuming you've already created a plex user and plex group in Linux.** 
-<p align="right">
 
 The UID (1001) and GID (1001) will be needed for docker compose and you'll need to check /etc/passwd to make sure they match. \
 Note that the UID and GID are unlikely to be the same on your machine. Make sure you check these.
@@ -38,7 +37,8 @@ sudo dnf install nfs-utils
 /appdata/plex is only used as a mount point in this example, and the NFS permissions are configured to read-only on the NAS side.
 
 This has been tested with rm -rf and access is denied due to read-only for the mounted filesystem. \
-Probably best to come back and adjust these permissions later as they're possibly over permissive.  
+Probably best to come back and adjust these permissions later as they're possibly over permissive. \
+These folders will not exist on your device and are just an example. Create your folder structure as preferred using mkdir.
 
 sudo chgrp plex /appdata/ \
 sudo chgrp plex /appdata/plex \
@@ -66,4 +66,4 @@ Your address space will almost certainly be different, so you'd have to create s
 In the example, we're working with a network of 192.168.20.0/26, but DHCP is only managing x.x.x.2-x.x.x.50, leaving twelve \
 addresses within the scope that can be assigned to other resources without colliding with DHCP or the broadcast address. 
 
-*NOTE: If you are new to docker networking, there's a great tutorial here: https&#65279;://www&#65279;.youtube.com/watch?v=5grbXvV_DSk*</p>
+*NOTE: If you are new to docker networking, there's a great tutorial here: https&#65279;://www&#65279;.youtube.com/watch?v=5grbXvV_DSk*

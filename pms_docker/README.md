@@ -21,7 +21,7 @@ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 A note about Docker permissions. By default, Docker commands require sudo permissions. \
 If you want to run commands from a different user context, that user needs to be added to the Docker group.
 
-sudo usermod -aG Docker username
+sudo usermod -aG docker username
 
 - We're assuming you have the NFS packages installed. You may need to install these depending on distribution.
 

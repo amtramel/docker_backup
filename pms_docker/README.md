@@ -3,23 +3,23 @@
 - **We're assuming you've already created a plex user and plex group in Linux.** \
 The UID (1001) and GID (1001) will be needed for docker compose and you'll need to check /etc/passwd to make sure they match.
 
-sudo useradd -M plex \
-cat /etc/passwd | grep plex \
-plex:x:1001:1001:plex::/bin/bash
+![#1589F0]sudo useradd -M plex`#1589F0` \
+![#1589F0]cat /etc/passwd | grep plex`#1589F0` \
+![#1589F0]plex:x:1001:1001:plex::/bin/bash`#1589F0`
 
 - **We're assuming you already have docker installed. This is distro dependent so you'll need to look it up for your specific install.** \
 You may need to add a repo to install docker and its components.
 
-sudo dnf config-manager --add-repo https&#65279;://download.docker.com/linux/fedora/docker-ce.repo
+![#1589F0]sudo dnf config-manager --add-repo https&#65279;://download.docker.com/linux/fedora/docker-ce.repo`#1589F0`
 
-dnf repolist  
+![#1589F0]dnf repolist`#1589F0`  
 <pre>repo name                                                repo id</pre>
 <pre>docker-ce-stable                                         Docker CE Stable - x86_64</pre>
 
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin.
 
 **Afer installing docker, you'll want to make sure it's enabled and started** \
-ex. sudo systemctl enable docker, sudo systemctl start docker, sudo systemctl is-enabled docker, sudo systemctl is-active docker
+ex. ![#1589F0]sudo systemctl enable docker, sudo systemctl start docker, sudo systemctl is-enabled docker, sudo systemctl is-active docker`#1589F0`
 
 A note about Docker permissions. By default, Docker commands require sudo permissions. \
 **If you want to run docker commands from a different user context, that user needs to be added to the docker group.**

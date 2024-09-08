@@ -1,4 +1,4 @@
-# Plex documentation  
+# Plex Media Server Docker Documentation  
 ## A lot of useful information can be found here: https&#65279;://hub.docker.com/r/plexinc/pms-docker/  
 - **We're assuming you've already created a plex user and plex group in Linux.** 
 

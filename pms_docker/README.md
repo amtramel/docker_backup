@@ -4,7 +4,7 @@
 The UID (1001) and GID (1001) will be needed for docker compose and you'll need to check /etc/passwd to make sure they match.
 
 sudo useradd -M plex \
-cat /etc/passwd: | grep plex \
+cat /etc/passwd | grep plex \
 plex:x:1001:1001:plex::/bin/bash
 
 - **We're assuming you already have docker installed. This is distro dependent so you'll need to look it up for your specific install.** \

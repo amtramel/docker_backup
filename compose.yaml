@@ -1,0 +1,88 @@
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker:latest
+    networks:
+      custommacvlan:
+        ipv4_address: 192.168.20.58
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ='America/New York'
+      - VERSION=docker
+      - PLEX_CLAIM=
+    volumes:
+      - /appdata/plex_config:/config
+      - /appdata/plex/anime:/tv
+      - /appdata/plex/movies:/movies
+      - /appdata/plex/music:/music
+    devices:
+      - /dev/dri:/dev/dri
+    restart: unless-stopped
+    dns:
+      - 192.168.20.60
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    networks:
+      custommacvlan:
+        ipv4_address: 192.168.20.60
+    environment:
+      TZ: 'America/New York'
+      WEBPASSWORD: 'pihole'
+      FTLCONF_LOCAL_IPV4: 192.168.20.60
+      DHCP_SERVER: false
+      DHCP_ROUTER: 192.168.20.1
+      DNSMASQ_LISTENING: local
+      DNSSEC: true
+      PIHOLE_DNS_: 192.168.20.61
+      REV_SERVER: true
+      REV_SERVER_TARGET: 192.168.20.1
+      REV_SERVER_CIDR: 192.168.20.0/26
+    volumes:
+      - type: bind
+        source: /appdata/pihole/etc-pihole
+        target: /etc/pihole
+      - type: bind
+        source: /appdata/pihole/etc-dnsmasq.d
+        target: /etc/dnsmasq.d
+    restart: unless-stopped
+  unbound:
+    container_name: unbound
+    image: mvance/unbound:latest
+    expose:
+      - "53"
+    networks:
+      custommacvlan:
+        ipv4_address: 192.168.20.61
+    volumes:
+      - type: bind
+        read_only: true
+        source: /appdata/unbound/unbound.conf
+        target: /opt/unbound/etc/unbound/unbound.conf
+    restart: unless-stopped
+  tautulli:
+    container_name: tautulli
+    image: lscr.io/linuxserver/tautulli:latest
+    networks:
+      custommacvlan:
+        ipv4_address: 192.168.20.59
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ=America/New_York
+    volumes:
+      - /tautulli/config:/config
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8181"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+      start_interval: 5s
+    dns:
+      - 192.168.20.60
+networks:
+  custommacvlan:
+    external: true

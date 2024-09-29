@@ -22,13 +22,16 @@ services:
     dns:
       - 192.168.20.60
   pihole:
+    depends_on:
+      unbound:
+        condition: service_healthy
     container_name: pihole
     image: pihole/pihole:latest
     networks:
       custommacvlan:
         ipv4_address: 192.168.20.60
     environment:
-      TZ: 'America/New York'
+      TZ: America/New_York
       WEBPASSWORD: 'pihole'
       FTLCONF_LOCAL_IPV4: 192.168.20.60
       DHCP_SERVER: false
@@ -62,6 +65,9 @@ services:
         target: /opt/unbound/etc/unbound/unbound.conf
     restart: unless-stopped
   tautulli:
+    depends_on:
+      plex:
+        condition: service_healthy
     container_name: tautulli
     image: lscr.io/linuxserver/tautulli:latest
     networks:
